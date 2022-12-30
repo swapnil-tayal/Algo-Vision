@@ -1,0 +1,230 @@
+.grid {
+  margin: 8px 0 0;
+}
+#header {
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 96%;
+  padding: 1rem 2%;
+  border-bottom: 0.1rem solid rgba(255, 255, 255);
+  position: relative;
+  z-index: 100;
+}
+header div #heading {
+  margin-left: 30px;
+}
+header div a {
+  text-decoration: none;
+  font-size: 1.8rem;
+  color: aliceblue;
+  font-weight: 500;
+}
+header a {
+  text-decoration: none;
+  font-size: 1.8rem;
+  color: aliceblue;
+  font-weight: 500;
+}
+#nav a:hover {
+  color: #ff5959;
+}
+#nav {
+  display: flex;
+}
+header nav .head {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  margin-left: 2rem;
+}
+#algo .algoNotVisible{
+  display: none;
+}
+#algo .algoVisible a {
+  margin-top: 5px;
+  font-size: 20px;
+  padding: 3px 5px;
+}
+.algoVisible {
+  animation: ease-in-out;
+  display: flex;
+  flex-direction: column;
+  border-radius: 7px;
+  padding: 12px 25px;
+  background-color: #333;
+  position: absolute;
+  border-bottom: 5px solid rgb(110, 110, 110);
+}
+#maze .mazeNotVisible{
+  display: none;
+}
+#maze .mazeVisible a {
+  margin-top: 5px;
+  font-size: 20px;
+  padding: 3px 5px;
+}
+.mazeVisible {
+  animation: ease-in-out;
+  display: flex;
+  margin-left: -75px;
+  flex-direction: column;
+  border-radius: 7px;
+  padding: 12px 25px;
+  background-color: #333;
+  position: absolute;
+  border-bottom: 5px solid rgb(110, 110, 110);
+}
+#speed .speedNotVisible{
+  display: none;
+}
+#speed .speedVisible a {
+  margin-top: 5px;
+  font-size: 20px;
+  padding: 3px 5px;
+}
+.speedVisible {
+  animation: ease-in-out;
+  display: flex;
+  flex-direction: column;
+  border-radius: 7px;
+  padding: 12px 25px;
+  background-color: #333;
+  position: absolute;
+  border-bottom: 5px solid rgb(110, 110, 110);
+}
+#info{
+  display: flex;
+  padding: 9px 0px;
+  justify-content: space-around;
+  width: 100%;
+}
+#info .infodiv{
+  display: flex;
+}
+#info div img{
+  animation:image;
+  height:37px;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+#info div #node{
+  margin-top: 10px;
+}
+#info div a{
+  font-size: 1.3rem;
+  margin-left: px;
+  margin-top: 4px;
+}
+.myNode {
+  width: 25px;
+  height: 25px;
+  outline: 1px solid rgb(175, 216, 248);
+  display: inline-block;
+  margin-top: 7px;
+  margin-right: 7px;
+}
+.myNode-visited{
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  margin-top: 7px;
+  margin-right: 7px;
+  animation-name: visitedAnimation;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+.myNode-wall{
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  margin-top: 7px;
+  margin-right: 7px;
+  animation-name: wallanimation;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+.myNode-shortest{
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  margin-top: 7px;
+  margin-right: 7px;
+  animation-name: shortestPath;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+@keyframes image {
+  0% {
+    transform: scale(0.3);
+  }
+  75% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes visitedAnimation {
+  0% {
+    transform: scale(0.3);
+    background-color: rgba(0, 0, 66, 0.75);
+    border-radius: 100%;
+  }
+  50% {
+    background-color: rgba(17, 104, 217, 0.75);
+  }
+  75% {
+    transform: scale(1.2);
+    background-color: rgba(0, 217, 159, 0.75);
+  }
+  100% {
+    transform: scale(1);
+    background-color: rgba(0, 190, 218, 0.75);
+  }
+}
+@keyframes wallanimation {
+  0% {
+    transform: scale(0.6);
+    background-color: rgb(12, 53, 71);
+  }
+  50% {
+    transform: scale(1.2);
+    background-color: rgb(12, 53, 71);
+  }
+  100% {
+    transform: scale(1);
+    background-color: rgb(12, 53, 71);
+  }
+}
+@keyframes shortestPath {
+  0% {
+    transform: scale(0.6);
+    background-color: rgb(255, 254, 106);
+  }
+  50% {
+    transform: scale(1.2);
+    background-color: rgb(255, 254, 106);
+  }
+  100% {
+    transform: scale(1);
+    background-color: rgb(255, 254, 106);
+  }
+}
