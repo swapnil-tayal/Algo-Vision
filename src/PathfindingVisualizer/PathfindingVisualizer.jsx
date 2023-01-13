@@ -187,9 +187,9 @@ export default class PathfindingVisualizer extends Component {
     }
   };
 
-  animate(visitedNodesInOrder, nodesInShortestPathOrder){
-
+  animate(visitedNodesInOrder, nodesInShortestPathOrder, algo){
     for (let i = 1; i <= visitedNodesInOrder.length; i++){
+      if(i == visitedNodesInOrder.length-1 && algo == 'Dijkstra') continue
       if (i === visitedNodesInOrder.length) {
         setTimeout(() => {
           this.animateShortestPath(nodesInShortestPathOrder);
@@ -250,7 +250,7 @@ export default class PathfindingVisualizer extends Component {
       return;
     }
     const nodesInShortestPathOrder = getNodesInShortestPathOrder(finishNode);
-    this.animate(visitedNodesInOrder, nodesInShortestPathOrder);
+    this.animate(visitedNodesInOrder, nodesInShortestPathOrder, this.state.algo);
   }
 
   animateBID(visitedNodesInOrderS, visitedNodesInOrderF){
